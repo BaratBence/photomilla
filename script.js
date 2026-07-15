@@ -32,9 +32,9 @@ class PhotoGallery {
 
     async loadImages() {
         let generatedArray = []
-        const response =  await fetch('images.json');
+        const response = await fetch('images.json');
         generatedArray = await response.json();
-        
+
         let collections = generatedArray.map(img => ({
             src: CONFIG.imagesFolder + img.path + img.filename,
             title: img.title,
@@ -42,7 +42,7 @@ class PhotoGallery {
             pictures: img.pictures,
             path: CONFIG.imagesFolder + img.path
         }));
-        
+
         this.collections = collections;
         this.titleImage = this.collections.filter(img => img.category == 'title');
         this.filteredImages = this.collections.filter(img => img.category === 'wedding');
@@ -53,10 +53,10 @@ class PhotoGallery {
         const coverImage = this.filteredImages[index];
 
         this.collectionImages = coverImage.pictures.map(name => ({
-                src: coverImage.path + name,
-                title: coverImage.title,
-                category: coverImage.category
-            }
+            src: coverImage.path + name,
+            title: coverImage.title,
+            category: coverImage.category
+        }
         ));
     }
 
@@ -80,10 +80,10 @@ class PhotoGallery {
     }
 
     getCategory(categoryName) {
-        switch(categoryName) {
+        switch (categoryName) {
             case 'wedding': return 'esküvő';
             case 'portrait': return 'portré';
-            case 'event' : return 'rendezvény';
+            case 'event': return 'rendezvény';
         }
     }
 
@@ -95,7 +95,7 @@ class PhotoGallery {
             this.heroBg.style.backgroundImage = `url(${imageSrc})`;
             this.heroBg.style.opacity = 0.3; //0.15;
         }, 1000);
-        
+
     }
 
     startHeroRotation() {
@@ -110,7 +110,7 @@ class PhotoGallery {
 
     filterCategories(category) {
         this.currentFilter = category;
-        this.filteredImages = this.collections.filter(img => img.category === category );
+        this.filteredImages = this.collections.filter(img => img.category === category);
         this.renderGallery();
     }
 
@@ -176,12 +176,18 @@ class PhotoGallery {
         this.lightbox.addEventListener('click', (e) => {
             if (e.target === this.lightbox) this.closeLightbox();
         });
+
+
     }
 
     setupScrollEffects() {
         const header = document.querySelector('header');
         window.addEventListener('scroll', () => {
             header.classList.toggle('scrolled', window.scrollY > 50);
+
+            if (nav.classList.contains('open')) {
+                header.classList.add('nav-open');
+            }
         });
     }
 }
@@ -216,3 +222,20 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
+const hamburger = document.getElementById('hamburger');
+const nav = document.getElementById('nav');
+
+hamburger.addEventListener('click', (e) => {
+    e.stopPropagation();
+    nav.classList.toggle('open');
+    document.querySelector('header').classList.toggle('nav-open', nav.classList.contains('open'));
+});
+
+document.addEventListener('click', () => {
+    nav.classList.remove('open');
+    document.querySelector('header').classList.remove('nav-open');
+});
+
+// Close when clicking outside
+document.addEventListener('click', () => nav.classList.remove('open'));
