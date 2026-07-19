@@ -172,10 +172,12 @@ class PhotoGallery {
             if (e.key === 'ArrowRight') this.navigateLightbox(1);
         });
 
-        this.lightbox.addEventListener('click', (e) => {
-            if (e.target === this.lightbox) this.closeLightbox(); // ignore clicks on backdrop
-            if (e.target.closest('#lightboxClose')) return; // ignore close button
 
+        this.lightbox.addEventListener('click', (e) => {
+            if (e.target === this.lightbox) this.closeLightbox();
+        });
+
+        this.lightboxImg.addEventListener('click', (e) => {
             const clickX = e.clientX;
             const half = window.innerWidth / 2;
 
