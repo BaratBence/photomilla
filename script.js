@@ -177,7 +177,18 @@ class PhotoGallery {
             if (e.target === this.lightbox) this.closeLightbox();
         });
 
+        // Swipe support for lightbox
+        let touchStartX = 0;
 
+        this.lightbox.addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].clientX;
+        }, { passive: true });
+
+        this.lightbox.addEventListener('touchend', (e) => {
+            const diff = touchStartX - e.changedTouches[0].clientX;
+            if (Math.abs(diff) < 50) return; // ignore small swipes
+            this.navigateLightbox(diff > 0 ? 1 : -1);
+        });
     }
 
     setupScrollEffects() {
@@ -190,6 +201,7 @@ class PhotoGallery {
             }
         });
     }
+
 }
 
 // Initialize gallery
