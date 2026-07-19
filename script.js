@@ -172,35 +172,17 @@ class PhotoGallery {
             if (e.key === 'ArrowRight') this.navigateLightbox(1);
         });
 
-        // Click outside to close
-        //this.lightbox.addEventListener('click', (e) => {
-        //    if (e.target === this.lightbox) this.closeLightbox();
-        //});
+        this.lightbox.addEventListener('click', (e) => {
+            if (e.target === this.lightbox) return; // ignore clicks on backdrop
+            if (e.target.closest('#lightboxClose')) return; // ignore close button
 
-        let touchStartX = 0;
-        let touchStartY = 0;
+            const clickX = e.clientX;
+            const half = window.innerWidth / 2;
 
-        this.lightbox.addEventListener('touchstart', (e) => {
-            console.log("start");
-            touchStartX = e.touches[0].clientX;
-        }, { passive: true });
-
-        this.lightbox.addEventListener('touchend', (e) => {
-            console.log("end");
-            if (!this.lightbox.classList.contains('active')) return;
-            const diff = touchStartX - e.changedTouches[0].clientX;
-            if (Math.abs(diff) < 50) return;
-            this.navigateLightbox(diff > 0 ? 1 : -1);
-        });
-    }
-
-    setupScrollEffects() {
-        const header = document.querySelector('header');
-        window.addEventListener('scroll', () => {
-            header.classList.toggle('scrolled', window.scrollY > 50);
-
-            if (nav.classList.contains('open')) {
-                header.classList.add('nav-open');
+            if (clickX < half) {
+                this.navigateLightbox(-1);
+            } else {
+                this.navigateLightbox(1);
             }
         });
     }
