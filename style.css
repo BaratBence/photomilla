@@ -4,8 +4,10 @@
             box-sizing: border-box;
         }
 
-        html {
+        html, body {
             scroll-behavior: smooth;
+            overflow-x: hidden;
+            max-width: 100%;
         }
 
         :root {
@@ -505,9 +507,7 @@
                 position: absolute;
                 top: 100%;
                 left: 0;
-                /* add this */
                 right: 0;
-                /* was: right: 1.5rem */
                 background: rgba(10, 10, 10, 0.95);
                 backdrop-filter: blur(12px);
                 border-top: 1px solid rgba(255, 255, 255, 0.06);
@@ -557,6 +557,50 @@
 
             nav a::after {
                 display: none;
+            }
+
+            header {
+                padding: 1rem 1.5rem;
+            }
+
+            .gallery-container {
+                padding: 1.5rem;
+            }
+
+            .filter-bar {
+                padding: 1.5rem;
+                gap: 1rem;
+            }
+
+            .social-links {
+                gap: 1.25rem;
+                flex-wrap: wrap;
+            }
+
+            .social-links a span {
+                display: none;
+            }
+
+            .social-links a {
+                font-size: 1.5rem;
+            }
+
+            .filter-bar {
+                padding: 1rem 1.5rem;
+                gap: 0.5rem;
+                justify-content: flex-start;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none; /* hides scrollbar on Firefox */
+            }
+
+            .filter-bar::-webkit-scrollbar {
+                display: none; /* hides scrollbar on Chrome/Safari */
+            }
+
+            .filter-btn {
+                white-space: nowrap; /* prevents buttons from wrapping */
+                flex-shrink: 0;
             }
         }
 
