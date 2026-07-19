@@ -173,20 +173,25 @@ class PhotoGallery {
         });
 
         // Click outside to close
-        this.lightbox.addEventListener('click', (e) => {
-            if (e.target === this.lightbox) this.closeLightbox();
-        });
+        //this.lightbox.addEventListener('click', (e) => {
+        //    if (e.target === this.lightbox) this.closeLightbox();
+        //});
 
-        // Swipe support for lightbox
+        let touchStartX = 0;
+        let touchStartY = 0;
+
         let touchStartX = 0;
 
         this.lightbox.addEventListener('touchstart', (e) => {
+            console.log("start");
             touchStartX = e.touches[0].clientX;
         }, { passive: true });
 
         this.lightbox.addEventListener('touchend', (e) => {
+            console.log("end");
+            if (!this.lightbox.classList.contains('active')) return;
             const diff = touchStartX - e.changedTouches[0].clientX;
-            if (Math.abs(diff) < 50) return; // ignore small swipes
+            if (Math.abs(diff) < 50) return;
             this.navigateLightbox(diff > 0 ? 1 : -1);
         });
     }
