@@ -180,8 +180,6 @@ class PhotoGallery {
         let touchStartX = 0;
         let touchStartY = 0;
 
-        let touchStartX = 0;
-
         this.lightbox.addEventListener('touchstart', (e) => {
             console.log("start");
             touchStartX = e.touches[0].clientX;
