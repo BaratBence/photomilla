@@ -173,7 +173,7 @@ class PhotoGallery {
         });
 
         this.lightbox.addEventListener('click', (e) => {
-            if (e.target === this.lightbox) return; // ignore clicks on backdrop
+            if (e.target === this.lightbox) this.closeLightbox(); // ignore clicks on backdrop
             if (e.target.closest('#lightboxClose')) return; // ignore close button
 
             const clickX = e.clientX;
@@ -183,6 +183,17 @@ class PhotoGallery {
                 this.navigateLightbox(-1);
             } else {
                 this.navigateLightbox(1);
+            }
+        });
+    }
+
+    setupScrollEffects() {
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.scrollY > 50);
+
+            if (nav.classList.contains('open')) {
+                header.classList.add('nav-open');
             }
         });
     }

@@ -4,7 +4,8 @@
             box-sizing: border-box;
         }
 
-        html, body {
+        html,
+        body {
             scroll-behavior: smooth;
             overflow-x: hidden;
             max-width: 100%;
@@ -335,8 +336,6 @@
             object-fit: contain;
             transform: scale(0.9);
             transition: transform 0.4s ease;
-                touch-action: pan-y;
-    pointer-events: none;
         }
 
         .lightbox.active .lightbox-content img {
@@ -412,6 +411,42 @@
             color: var(--text-secondary);
             font-size: 0.8rem;
             margin-top: 0.5rem;
+        }
+
+        .lightbox-hint {
+            text-align: center;
+            margin-top: 1rem;
+            color: var(--text-secondary);
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            opacity: 0;
+            animation: fadeHint 3s ease forwards;
+            animation-delay: 0.5s;
+        }
+
+        @keyframes fadeHint {
+            0% {
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            80% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .lightbox-hint {
+                display: none;
+            }
         }
 
         /* Loading State */
@@ -505,6 +540,7 @@
                 display: flex;
             }
 
+
             nav {
                 position: absolute;
                 top: 100%;
@@ -593,7 +629,7 @@
                 justify-content: flex-start;
                 overflow-x: auto;
                 -webkit-overflow-scrolling: touch;
-                scrollbar-width: none; 
+                scrollbar-width: none;
             }
 
             .filter-bar::-webkit-scrollbar {
@@ -604,6 +640,11 @@
                 white-space: nowrap;
                 flex-shrink: 0;
             }
+
+            .lightbox-close {
+                display: none;
+            }
+
         }
 
         /* Animations */
