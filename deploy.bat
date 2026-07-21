@@ -1,3 +1,5 @@
+echo %date% %time% > .deploy-date
+
 git add .
 
 git commit -m "Added pictures"
