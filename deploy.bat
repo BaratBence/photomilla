@@ -8,3 +8,4 @@ git push origin main
 
 echo.
 echo Finished!
+pause
