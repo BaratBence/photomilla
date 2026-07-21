@@ -1,6 +1,6 @@
 git add .
 
-git commit -m "Website update"
+git commit -m "Added pictures"
 
 git push origin main
 
