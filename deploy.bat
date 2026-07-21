@@ -1,4 +1,4 @@
-echo %date% %time% > .deploy-date.txt
+echo %date% %time% > .deploy-date
 
 git add .
 
