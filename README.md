@@ -1,9 +1,9 @@
 ## Szia Kamilla!
-- [Telepítés](###Telepítés)
-- [Képek feltöltése](###Képek-feltöltése)
-- [Profilkép csere](###Profilkép-csere)
 
 ### Telepítés
+- Töltsd le a [git cli](https://github.com/git-for-windows/git/releases/download/v2.55.0.windows.3/Git-2.55.0.3-64-bit.exe) és telepítsd
+- jobb click egy mappába és válaszd ki a git bash opciót, majd add ki az alábbi parancsot
+	- git config --global "felhasználónév" "email"
 
 ### Képek feltöltése
 - Menj be az **images** mappában
