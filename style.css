@@ -659,9 +659,9 @@
         background: none;
         border: 1px solid var(--text-secondary);
         color: var(--text-primary);
-        width: 48px;
-        height: 48px;
-        font-size: 1.2rem;
+        width: 20px;
+        height: 20px;
+        font-size: 0.6rem;
         cursor: pointer;
         transition: border-color 0.3s ease, color 0.3s ease;
         display: flex;
