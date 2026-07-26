@@ -7,7 +7,6 @@
 - majd ebben az ablakban add ki a következő parancsot:
 	- git clone https://github.com/BaratBence/photomilla.git
 
-
 ### Képek feltöltése
 - Menj be az **images** mappában
 - Majd választ ki a megfelelő kategóriához tartozó mappát:
@@ -16,7 +15,7 @@
 	- event: eseményekhez tartozó képek
 	- title: a címszalagon megjelenő váltakozó képek
 - Hozz létre egy új mappát a kategória mappában (a mappa neve lesz a kollekció neve az oldalon)
-- Húzz ebbe a mappába minden képet, amit fel szeretnél tölteni. 
+- Húzz ebbe a mappába minden képet, amit fel szeretnél tölteni.
 - Nevezz el egy képet **cover** néven, ez lesz a kollekció borítója (erre kell kattintani ha meg akarod nézni a többi képet)
 -  Ha mindennel megvagy indítsd el a deploy.bat file-t (ez elindítja a kirakást)
 	- 1-2 percen belül meg is lesznek a képek az oldalon
