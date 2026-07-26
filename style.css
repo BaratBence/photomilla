@@ -648,51 +648,57 @@
             }
 
             .lightbox-mobile-controls {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 1.5rem;
-        gap: 1rem;
-    }
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 1.5rem;
+                gap: 1rem;
+            }
 
-    .mobile-nav-btn {
-        background: none;
-        border: 1px solid var(--text-secondary);
-        color: var(--text-primary);
-        width: 24px;
-        height: 24px;
-        font-size: 0.6rem;
-        cursor: pointer;
-        transition: border-color 0.3s ease, color 0.3s ease;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+            .mobile-nav-btn {
+                background: none;
+                border: 1px solid var(--text-secondary);
+                color: var(--text-primary);
+                width: 30px;
+                height: 30px;
+                font-size: 0.9rem;
+                cursor: pointer;
+                transition: border-color 0.3s ease, color 0.3s ease;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
 
-    .mobile-nav-btn:hover {
-        border-color: var(--accent);
-        color: var(--accent);
-    }
+            .mobile-nav-btn:hover {
+                border-color: var(--accent);
+                color: var(--accent);
+            }
 
-    .mobile-close-btn {
-        background: none;
-        border: 1px solid var(--text-secondary);
-        color: var(--text-primary);
-        width: 20px;
-        height: 20px;
-        font-size: 0.6rem;
-        border-radius: 50%;
-        cursor: pointer;
-        transition: border-color 0.3s ease, color 0.3s ease;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+            .mobile-close-btn {
+                background: none;
+                border: 1px solid var(--text-secondary);
+                color: var(--text-primary);
+                width: 30px;
+                height: 30px;
+                font-size: 0.9rem;
+                border-radius: 50%;
+                cursor: pointer;
+                transition: border-color 0.3s ease, color 0.3s ease;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
 
-    .mobile-close-btn:hover {
-        border-color: var(--accent);
-        color: var(--accent);
-    }
+            .mobile-close-btn:hover {
+                border-color: var(--accent);
+                color: var(--accent);
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+                max-width: 340px;
+                margin: 0 auto;
+            }
 
         }
 

@@ -26,3 +26,10 @@
 - Cseréld le a profile képet (neve ugyan annak kell legyen mint eddig)
 - Ha ez megvan akkor indíts el a deploy.bat file-t (ez elindítja a kirakást)
 	- 1-2 percen belül meg is lesznek a képek az oldalon
+
+### Bemutatkozás csere
+- Nyisd meg az **index.html** fájlt (tetszőleges text editort használhatsz)
+- Keresd meg az **about-text-col** div-et (vagy ahol a szöveg van, talán így egyszerűbb)
+- Írd át a szöveget tetszőlegesen, és mentsd el
+- Ha ez megvan akkor indíts el a deploy.bat file-t (ez elindítja a kirakást)
+	- 1-2 percen belül meg is lesznek a képek az oldalon
