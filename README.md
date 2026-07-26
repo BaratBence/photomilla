@@ -2,8 +2,11 @@
 
 ### Telepítés
 - Töltsd le a [git cli](https://github.com/git-for-windows/git/releases/download/v2.55.0.windows.3/Git-2.55.0.3-64-bit.exe) és telepítsd
-- jobb click egy mappába és válaszd ki a git bash opciót, majd add ki az alábbi parancsot
-	- git config --global "felhasználónév" "email"
+- jobb click egy mappába és válaszd ki az "Open git bash here" opciót, majd add ki az alábbi parancsot
+	- git config --global Kamilla photomilla@gmail.com
+- majd ebben az ablakban add ki a következő parancsot:
+	- git clone https://github.com/BaratBence/photomilla.git
+
 
 ### Képek feltöltése
 - Menj be az **images** mappában

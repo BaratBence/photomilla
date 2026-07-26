@@ -164,28 +164,16 @@ class PhotoGallery {
         document.getElementById('lightboxPrev').addEventListener('click', () => this.navigateLightbox(-1));
         document.getElementById('lightboxNext').addEventListener('click', () => this.navigateLightbox(1));
 
+        document.getElementById('mobilePrev').addEventListener('click', () => this.navigateLightbox(-1));
+        document.getElementById('mobileNext').addEventListener('click', () => this.navigateLightbox(1));
+        document.getElementById('mobileClose').addEventListener('click', () => this.closeLightbox());
+
         // Keyboard navigation
         document.addEventListener('keydown', (e) => {
             if (!this.lightbox.classList.contains('active')) return;
             if (e.key === 'Escape') this.closeLightbox();
             if (e.key === 'ArrowLeft') this.navigateLightbox(-1);
             if (e.key === 'ArrowRight') this.navigateLightbox(1);
-        });
-
-
-        this.lightbox.addEventListener('click', (e) => {
-            if (e.target === this.lightbox) this.closeLightbox();
-        });
-
-        this.lightboxImg.addEventListener('click', (e) => {
-            const clickX = e.clientX;
-            const half = window.innerWidth / 2;
-
-            if (clickX < half) {
-                this.navigateLightbox(-1);
-            } else {
-                this.navigateLightbox(1);
-            }
         });
     }
 
