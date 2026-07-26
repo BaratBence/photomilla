@@ -138,7 +138,7 @@ class PhotoGallery {
         const image = this.collectionImages[this.currentLightboxIndex];
         this.lightboxImg.src = image.src;
         this.lightboxTitle.textContent = image.title;
-        this.lightboxCategory.textContent = getCategory(image.category);
+        this.lightboxCategory.textContent = this.getCategory(image.category);
     }
 
     setupEventListeners() {

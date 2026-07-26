@@ -540,6 +540,11 @@
             background: var(--text-primary);
         }
 
+        .mobile-nav-btn,
+        .mobile-close-bth {
+            display: none;
+        }
+
         @media (max-width: 768px) {
             .hamburger {
                 display: flex;
